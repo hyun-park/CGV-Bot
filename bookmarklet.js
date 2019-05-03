@@ -179,6 +179,10 @@ function seatInfoHandler() {
       }
     }
     passedSetHandler(passedSet[bestIndex]);
+
+    setTimeout(function() {
+      contentWindow.loadSeatInfo(seatInfoHandler);
+    }, 5000);
     return;
 
     // 필요한 자리만큼 가능한 선호자리가 나지 않음
@@ -228,7 +232,6 @@ function passedSetHandler(seats) {
         "http://upload.wikimedia.org/wikipedia/commons/c/ce/Rotating-bicycle-bell.wav"
       );
       bell.play();
-      seatInfoHandler();
     }
   });
   // $("#ry-button").remove();
